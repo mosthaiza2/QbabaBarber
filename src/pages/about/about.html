@@ -7,13 +7,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-label>
-        กรอกข้อมูลที่ต้องการค้นหา
-    </ion-label>
-    <ion-card>
-       <ion-input [(ngModel)]="Keyword" name="Keyword"></ion-input>
-    </ion-card>
-  <button ion-button block>
-    <ion-icon name="search"></ion-icon>ค้นหา
+  <form (ngSubmit)="findbarber()">
+  <ion-label>
+    กรอกข้อมูลที่ต้องการค้นหา
+  </ion-label>
+  <ion-card>
+      <ion-input [(ngModel)]="data.keyword" name="keyword"></ion-input>
+  </ion-card>
+  <button ion-button block type="submit">
+    <ion-icon name="search" ></ion-icon>ค้นหา
   </button>
+  </form>
+
 </ion-content>

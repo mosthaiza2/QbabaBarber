@@ -22,7 +22,7 @@ export class DetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     let bid=this.navParams.get('barberid');
     let url = "http://localhost:8080/barbershop/" + bid;
-    console.log(url);
+    console.log(url)
     this.http.get(url).map(res => res.json()).subscribe(data => {this.barbershop = data});
   }
   
