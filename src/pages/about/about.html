@@ -6,6 +6,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+    <ion-label>
+        กรอกข้อมูลที่ต้องการค้นหา
+    </ion-label>
+    <ion-card>
+       <ion-input [(ngModel)]="Keyword" name="Keyword"></ion-input>
+    </ion-card>
+  <button ion-button block>
+    <ion-icon name="search"></ion-icon>ค้นหา
+  </button>
 </ion-content>
