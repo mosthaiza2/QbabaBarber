@@ -13,6 +13,6 @@ data={keyword:""};
   }
   findbarber(){
     console.log(this.data.keyword);
-    this.navCtrl.push(ResultPage, {ketword: this.data.keyword})
+    this.navCtrl.push(ResultPage, {keyword: this.data.keyword})
   };
 }

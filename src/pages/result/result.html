@@ -12,13 +12,10 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item> 
-            <ion-card-header>
-                {{barbershop.OwnerName}}
-              </ion-card-header>
-              <p>ชื่อร้าน : {{barbershop.BarberName}}</p> 
-              <p>ชื่อเจ้าของร้าน : {{barbershop.OwnerName}}</p> 
-              <button ion-button clear item-end (click)="showDetail(barbershop.BarberID)">View</button>
+        <ion-item *ngFor="let item of barbershop"> 
+              <p>ชื่อร้าน : {{item.BarberName}}</p> 
+              <p>ชื่อเจ้าของร้าน : {{item.OwnerName}}</p> 
+              <button ion-button clear item-end (click)="showDetail(item.BarberID)">View</button>
           </ion-item>
     </ion-list>
 </ion-content>

@@ -19,7 +19,7 @@ import {Http} from '@angular/http';
 export class ResultPage {
   barbershop:any=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    let bid=this.navParams.get('ketword');
+    let bid=this.navParams.get('keyword');
     let url = "http://localhost:8080/barbershop/name/" + bid;
     console.log(url)
     this.http.get(url).map(res => res.json()).subscribe(data => {this.barbershop = data});
