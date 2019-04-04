@@ -16,8 +16,9 @@
             <ion-card-header>
                 {{barbershop.OwnerName}}
               </ion-card-header>
+              <p>ชื่อร้าน : {{barbershop.BarberName}}</p> 
               <p>ชื่อเจ้าของร้าน : {{barbershop.OwnerName}}</p> 
-              <p>ที่อยู่ร้าน : {{barbershop.Address}}</p> 
+              <button ion-button clear item-end (click)="showDetail(barbershop.BarberID)">View</button>
           </ion-item>
     </ion-list>
 </ion-content>
