@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {QueuePage} from '../queue/queue';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -29,5 +30,8 @@ export class DetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }
-
+  queue()
+  {
+    this.navCtrl.push(QueuePage);
+  }  
 }

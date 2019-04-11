@@ -5,6 +5,8 @@ import { MyApp } from './app.component';
 
 import {HttpModule} from '@angular/http';
 import { HTTP } from '@ionic-native/http';
+import {IonicStorageModule} from '@ionic/storage'
+
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -13,6 +15,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DetailPage } from '../pages/detail/detail';
 import { ResultPage} from '../pages/result/result';
 import { NewbarberPage} from '../pages/newbarber/newbarber';
+import {QueuePage} from '../pages/queue/queue';
+import {HistoryPage} from '../pages/history/history';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,12 +31,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     DetailPage,
     ResultPage,
-    NewbarberPage
+    NewbarberPage,
+    QueuePage,
+    HistoryPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +50,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     DetailPage,
     ResultPage,
-    NewbarberPage
+    NewbarberPage,
+    QueuePage,
+    HistoryPage
   ],
   providers: [
     StatusBar,
