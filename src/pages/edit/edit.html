@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>เพิ่มร้านตัดผมใหม่</ion-title>
+    <ion-title>แก้ไขร้านตัดผมใหม่</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <form (ngSubmit)="addbarber()">
+    <form (ngSubmit)="editbarber()">
       <ion-item>
         <ion-label floating >รหัสร้านตัดผม</ion-label>
         <ion-input type="text" name="BarberID" [(ngModel)]="barbershop.BarberID" ></ion-input>

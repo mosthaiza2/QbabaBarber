@@ -11,6 +11,7 @@
       <h2>{{b.BarberID}}</h2>
       <h2>{{b.BarberName}}</h2>
         <button ion-button clear item-end (click)="showDetail(b.BarberID)">View</button>
+        <button ion-button clear item-end (click)="deleteData(b.BarberID)">Delete</button>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -26,7 +26,7 @@ export class NewbarberPage {
     console.log('ionViewDidLoad NewbarberPage');
   }
   //การใช์ ionic HttpNative
-  addbarber(){
+  editbarber(){
     let url= "http://localhost:8080/barbershop";
     this.http.post(url,this.barbershop)
       .subscribe(
