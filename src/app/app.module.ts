@@ -5,7 +5,10 @@ import { MyApp } from './app.component';
 
 import {HttpModule} from '@angular/http';
 import { HTTP } from '@ionic-native/http';
-import {IonicStorageModule} from '@ionic/storage'
+import {HttpClientModule} from '@angular/common/http';
+import {IonicStorageModule} from '@ionic/storage';
+import {SQLite} from '@ionic-native/sqlite';
+import {Toast} from '@ionic-native/toast';
 
 
 import { AboutPage } from '../pages/about/about';
@@ -39,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +59,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HistoryPage
   ],
   providers: [
-    StatusBar,
+    StatusBar,SQLite,Toast,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HTTP

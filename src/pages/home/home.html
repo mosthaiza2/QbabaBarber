@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-
+  <button ion-button small color="danger" (click)="newbarber()">เพิ่มร้านตัดผม</button>
   <ion-list>
     <ion-item *ngFor="let b of barbershop"> 
       <h2>{{b.BarberID}}</h2>
