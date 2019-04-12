@@ -34,8 +34,8 @@ export class HomePage {
     this.getData();
   }
 
-  editData(){
-    this.navCtrl.push(EditPage);
+  editData(id){
+    this.navCtrl.push(EditPage,{barberid:id});
   }
 
   deleteData(BarberID){
