@@ -4,6 +4,7 @@ import { DetailPage } from '../detail/detail';
 import { NewbarberPage} from '../newbarber/newbarber';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { EditPage } from '../edit/edit';
 
 @Component({
   selector: 'page-home',
@@ -32,6 +33,11 @@ export class HomePage {
   ionViewWillEnter(){
     this.getData();
   }
+
+  editData(){
+    this.navCtrl.push(EditPage);
+  }
+
   deleteData(BarberID){
     this.alertCtrl.create({
       title:"Confirm", subTitle:"Confirm delete",buttons:[
@@ -67,5 +73,7 @@ export class HomePage {
     //show alert
     alert.present();
 }
+
+
 
 }
