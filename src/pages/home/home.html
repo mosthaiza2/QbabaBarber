@@ -5,7 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button small color="danger" (click)="newbarber()">เพิ่มร้านตัดผม</button>
+  <button ion-fab mini (click)="newbarber()">
+    <ion-icon name="add"></ion-icon>
+  </button>
   <ion-list>
     <ion-item *ngFor="let b of barbershop"> 
       <h2>{{b.BarberID}}</h2>

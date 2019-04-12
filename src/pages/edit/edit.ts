@@ -24,7 +24,7 @@ export class EditPage {
     let bid=this.navParams.get('barberid');
     let url = "http://localhost:8080/barbershop/" + bid;
     console.log(url)
-    this.http.get(url).map(res => res.json()).subscribe(data => {this.barbershop = data});
+    this.http.get(url).map(res => res.json()).subscribe(data => {this.barbershop = data}); 
   }
   
 
