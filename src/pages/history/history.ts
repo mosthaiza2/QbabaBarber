@@ -17,14 +17,14 @@ import { Http } from '@angular/http';
   templateUrl: 'history.html',
 })
 export class HistoryPage {
-  queue:any=0;
+  queuebarber:any=0;
   data:any=0;
   constructor(public navCtrl: NavController,public navParam: NavParams, public http: Http) {
     this.getData();
 }
   getData(){
-    this.http.get('http://localhost:8080/queue')
-    .map(res => res.json()).subscribe(data => {this.queue= data});
+    this.http.get('http://localhost:8080/queuebarber')
+    .map(res => res.json()).subscribe(data => {this.queuebarber= data});
 }
 
   ionViewWillEnter(){
