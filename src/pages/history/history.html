@@ -11,5 +11,11 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let q of queue"> 
+          <p>ชื่อร้าน : {{q.QueueID}}</p> 
+          <p>ชื่อเจ้าของร้าน : {{q.BarberName}}</p> 
+          <p>วันที่ทำการจองคิว: {{q.QueueDate}}</p>
+    </ion-item>
+</ion-list>
 </ion-content>
