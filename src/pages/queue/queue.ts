@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -16,10 +17,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'queue.html',
 })
 export class QueuePage {
-  data = { date:"", type:"", description:"", amount:0};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ 
+  queuebarber = {
+    QueueID:"",
+    BarberName:"",
+    QueueStatus:"",
+    QueueDate:"",
+    QueueTime:""
+
+  };
+  data:any=0;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient,private alertCtrl:AlertController) {
   }
 
+  Queue(){
+    let url= "http://localhost:8080/queuebarber";
+    this.http.post(url,this.queuebarber)
+      .subscribe(
+        res=>{
+          this.data =res;
+          if(this.data.msg==true){
+            this.showAlert("Success","Data added");
+            this.navCtrl.popToRoot();
+          }
+        }
+      );
+    }
+    //สร้าง Alert Message
+    showAlert(msgTitle:string, message:string){
+        const alert = this.alertCtrl.create({
+          title: msgTitle,
+          subTitle: message,
+          buttons: ["OK"]
+        });
+        //show alert
+        alert.present();
+    }
   
 
   ionViewDidLoad() {

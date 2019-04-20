@@ -27,7 +27,7 @@ export class HomePage {
   //แสดงข้อมูลเมื่อเปิดมาสู่หน้าครั้งแรก
   getData(){
     this.http.get('http://localhost:8080/barbershop')
-    .map(res => res.json()).subscribe(data => {this.barbershop= data});
+      .map(res => res.json()).subscribe(data => {this.barbershop= data});
   }
   //แสดงข้อมูลเมื่อไปหน้าอื่นแล้วกลับมาสู่หน้า Home
   ionViewWillEnter(){

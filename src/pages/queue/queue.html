@@ -7,9 +7,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>queue</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <form (ngSubmit)="Queue()">
+      <ion-item>
+    <ion-label floatting>รหัสการจองคิว</ion-label>
+    <ion-input type="text" [(ngModel)]="queuebarber.QueueID" name="QueueID" required=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floatting>วันที่</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="queuebarber.QueueDate" name="date" required=""></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label floatting>เวลา</ion-label>
+    <ion-datetime displayFormat="HH:mm:ss" [(ngModel)]="queuebarber.QueueTime"name="time" required=""></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>สถานะ</ion-label>
+      <ion-select [(ngModel)]="queuebarber.QueueStatus" name="QueueStatus" required="">
+          <ion-option value="กำลังรอคิวบริการ">กำลังรอคิวบริการ</ion-option>
+          <ion-option value="เสร็จสิ้น">เสร็จสิ้น</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>ชื่อร้านตัดผม</ion-label>
+        <ion-input type="text"  [(ngModel)]="queuebarber.BarberName" name="BarberName" required=""></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>บันทึกข้อมูล</button>
+    </form>
 </ion-content>
