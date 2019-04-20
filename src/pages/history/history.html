@@ -12,12 +12,16 @@
 
 <ion-content padding>
   <ion-list>
+ 
     <ion-item *ngFor="let q of queuebarber"> 
           <p>รหัสการจองคิว : {{q.QueueID}}</p> 
           <p>ชื่อร้าน : {{q.BarberName}}</p>
           <p>สถานะ : {{q.QueueStatus}}</p> 
           <p>วันที่ทำการจองคิว: {{q.QueueDate}}</p>
           <p>เวลาจองคิว: {{q.QueueTime}}</p>
-    </ion-item>
+       <button ion-button color="danger" (click)="deleteData(q.QueueID)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+         </ion-item>
 </ion-list>
 </ion-content>

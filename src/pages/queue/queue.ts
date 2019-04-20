@@ -54,6 +54,7 @@ export class QueuePage {
         alert.present();
     }
   
+    
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QueuePage');
