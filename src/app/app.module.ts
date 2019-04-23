@@ -21,6 +21,7 @@ import { NewbarberPage} from '../pages/newbarber/newbarber';
 import {QueuePage} from '../pages/queue/queue';
 import {HistoryPage} from '../pages/history/history';
 import {EditPage} from '../pages/edit/edit';
+import {QueueEditPage} from '../pages/queue-edit/queue-edit';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -38,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewbarberPage,
     QueuePage,
     HistoryPage,
-    EditPage
+    EditPage,
+    QueueEditPage
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewbarberPage,
     QueuePage,
     HistoryPage,
-    EditPage
+    EditPage,
+    QueueEditPage
   ],
   providers: [
     StatusBar,SQLite,Toast,

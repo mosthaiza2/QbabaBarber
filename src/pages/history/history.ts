@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 
 import 'rxjs/add/operator/map';
 import { Http } from '@angular/http';
+import { QueueEditPage } from '../queue-edit/queue-edit';
 
 
 /**
@@ -27,6 +28,11 @@ export class HistoryPage {
     this.http.get('http://localhost:8080/queuebarber')
     .map(res => res.json()).subscribe(data => {this.queuebarber= data});
 }
+
+editData(id){
+  this.navCtrl.push(QueueEditPage,{QueueID:id});
+}
+
 deleteData(QueueID){
   this.alertCtrl.create({
     title:"Confirm", subTitle:"Confirm delete",buttons:[
