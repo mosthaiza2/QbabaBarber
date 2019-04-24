@@ -28,7 +28,9 @@ export class QueuePage {
 
   };
   data:any=0;
-  barbershop:any=0;
+  barbershop= {
+    BarberName:""
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams,private http:Http,private httpClient:HttpClient,private alertCtrl:AlertController) {
     let bid=this.navParams.get('barberid');
     let url = "http://localhost:8080/barbershop/" + bid;
@@ -37,13 +39,14 @@ export class QueuePage {
   }
 
   Queue(){
+    this.queuebarber.BarberName = this.barbershop.BarberName;
     let url= "http://localhost:8080/queuebarber";
     this.httpClient.post(url,this.queuebarber)
       .subscribe(
         res=>{
           this.data =res;
           if(this.data.msg==true){
-            this.showAlert("Success","Data added");
+            this.showAlert("Success","จองคิวบริการเรียบร้อยแล้วครับ");
             this.navCtrl.popToRoot();
           }
         }
