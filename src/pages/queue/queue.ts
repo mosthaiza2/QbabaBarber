@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 
 
@@ -28,12 +29,16 @@ export class QueuePage {
   };
   data:any=0;
   barbershop:any=0;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient,private alertCtrl:AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http:Http,private httpClient:HttpClient,private alertCtrl:AlertController) {
+    let bid=this.navParams.get('barberid');
+    let url = "http://localhost:8080/barbershop/" + bid;
+    console.log(url)
+    this.http.get(url).map(res => res.json()).subscribe(data => {this.barbershop = data});
   }
 
   Queue(){
     let url= "http://localhost:8080/queuebarber";
-    this.http.post(url,this.queuebarber)
+    this.httpClient.post(url,this.queuebarber)
       .subscribe(
         res=>{
           this.data =res;
