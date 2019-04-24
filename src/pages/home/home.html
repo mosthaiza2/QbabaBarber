@@ -1,17 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Barber Shop</ion-title>
+    <ion-buttons end>
+      <button ion-fab mini (click)="newbarber()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-fab mini (click)="newbarber()">
-    <ion-icon name="add"></ion-icon>
-  </button>
+  <img src="assets/imgs/logoQbaba.png" alt="">
+
+   
+ 
   <ion-list>
     <ion-item *ngFor="let b of barbershop"> 
-      <h2>{{b.BarberID}}</h2>
-      <h2>{{b.BarberName}}</h2>
+     <p>ร้าน: {{b.BarberName}}</p>
         <button ion-button clear item-end (click)="showDetail(b.BarberID)">View</button>
         <button ion-button clear item-end (click)="deleteData(b.BarberID)">Delete</button>
         <button ion-button clear item-end (click)="editData(b.BarberID)">Edit</button>

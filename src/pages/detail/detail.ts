@@ -30,8 +30,8 @@ export class DetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }
-  queue()
+  queue(id)
   {
-    this.navCtrl.push(QueuePage);
+    this.navCtrl.push(QueuePage,{barberid:id});
   }  
 }

@@ -27,6 +27,7 @@ export class QueuePage {
 
   };
   data:any=0;
+  barbershop:any=0;
   constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpClient,private alertCtrl:AlertController) {
   }
 
